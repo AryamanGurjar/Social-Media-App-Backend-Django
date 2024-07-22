@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import base64
+
 from rest_framework.pagination import PageNumberPagination
 
 
@@ -30,7 +33,6 @@ def decode_text(encoded_text):
     decoded_bytes = base64.b64decode(encoded_bytes)
     decoded_text = decoded_bytes.decode('utf-8')
     return decoded_text
-
 
 
 class CustomPageNumberPagination(PageNumberPagination):

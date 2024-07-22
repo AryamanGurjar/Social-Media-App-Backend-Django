@@ -1,7 +1,10 @@
+from __future__ import annotations
+
 import uuid
 from functools import wraps
-from django.shortcuts import get_object_or_404
+
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 from user_auth.models import User
 

@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 from django.apps import AppConfig
 
 
 class SearchUserConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "search_user"
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'search_user'

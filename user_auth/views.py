@@ -1,7 +1,13 @@
-from rest_framework import generics, status
+from __future__ import annotations
+
+from rest_framework import generics
+from rest_framework import status
 from rest_framework.response import Response
+
 from .models import User
-from .serializers import RegisterSerializer, LoginSerializer
+from .serializers import LoginSerializer
+from .serializers import RegisterSerializer
+
 
 class RegisterUserView(generics.CreateAPIView):
     """Register User."""
@@ -16,8 +22,10 @@ class LoginUserView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data, context={'request': request})
+        serializer = self.serializer_class(
+            data=request.data, context={'request': request},
+        )
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         user_id = str(user.id)
-        return Response({'id':user_id }, status=status.HTTP_200_OK)
+        return Response({'id': user_id}, status=status.HTTP_200_OK)

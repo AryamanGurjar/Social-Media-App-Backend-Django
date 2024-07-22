@@ -1,28 +1,24 @@
-from rest_framework import generics, status
-from rest_framework.response import Response
+from __future__ import annotations
 
-from django.utils import timezone
 from datetime import timedelta
 
-from friend_logic.serializers import FriendRequestSerializer
+from django.utils import timezone
+from rest_framework import generics
+from rest_framework import status
+from rest_framework.response import Response
 
-from user_auth.models import User
-
-from friend_logic.models import FriendRequest
-
+from friend_logic.constants import RECEIVER_EMAIL_ID
+from friend_logic.constants import RequestAction
+from friend_logic.constants import SENDER_EMAIL_ID
 from friend_logic.models import FriendList
-
+from friend_logic.models import FriendRequest
+from friend_logic.serializers import FriendRequestSerializer
 from search_user.serializers import UserSerializer
-
-from social_media_app.custome_decorator import validate_registered_user_uuid
-
-from social_media_app.utils import CustomPageNumberPagination
-
-from friend_logic.constants import RequestAction,RECEIVER_EMAIL_ID,SENDER_EMAIL_ID
-
 from social_media_app.constants import USER_ID
-
 from social_media_app.custom_exception import SocialMediaAppException
+from social_media_app.custome_decorator import validate_registered_user_uuid
+from social_media_app.utils import CustomPageNumberPagination
+from user_auth.models import User
 
 
 class FriendRequestView(generics.CreateAPIView):
@@ -40,13 +36,17 @@ class FriendRequestView(generics.CreateAPIView):
             receiver = User.objects.get(email=receiver_id)
 
             if receiver.id == sender_id:
-                return Response({'error': "You can't send request to yourself"},
-                                status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {'error': "You can't send request to yourself"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
             # Check if the user has sent more than 3 requests in the last minute
             one_minute_ago = timezone.now() - timedelta(minutes=1)
             sender = User.objects.get(id=sender_id)
-            recent_requests = FriendRequest.objects.filter(sender=sender, timestamp__gte=one_minute_ago).count()
+            recent_requests = FriendRequest.objects.filter(
+                sender=sender, timestamp__gte=one_minute_ago,
+            ).count()
             if recent_requests >= 3:
                 return Response({'error': 'More than 3 request can be sent in a minute.'}, status=status.HTTP_429_TOO_MANY_REQUESTS)
             # Check if a friend request already exists
@@ -55,11 +55,12 @@ class FriendRequestView(generics.CreateAPIView):
 
             friend_request = FriendRequest(sender=sender, receiver=receiver)
             friend_request.save()
-            return Response("Request Sent", status=status.HTTP_201_CREATED)
+            return Response('Request Sent', status=status.HTTP_201_CREATED)
 
         except Exception as err:
-            raise SocialMediaAppException(message=f'Some error occurred: {err}')
-
+            raise SocialMediaAppException(
+                message=f'Some error occurred: {err}',
+            )
 
 
 class FriendRequestActionView(generics.GenericAPIView):
@@ -68,7 +69,7 @@ class FriendRequestActionView(generics.GenericAPIView):
     """
 
     @validate_registered_user_uuid
-    def post(self,request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
 
         receiver_id = kwargs.get(USER_ID)
         sender_id = request.data.get(SENDER_EMAIL_ID)
@@ -76,7 +77,9 @@ class FriendRequestActionView(generics.GenericAPIView):
             receiver = User.objects.get(id=receiver_id)
             sender = User.objects.get(email=sender_id)
             try:
-                friend_request = FriendRequest.objects.get(sender=sender, receiver=receiver)
+                friend_request = FriendRequest.objects.get(
+                    sender=sender, receiver=receiver,
+                )
             except FriendRequest.DoesNotExist:
                 return Response({'error': 'Friend request not found.'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -84,25 +87,31 @@ class FriendRequestActionView(generics.GenericAPIView):
             if action == RequestAction.ACCEPT.value:
                 friend_request.status = 'accepted'
                 # Get or create FriendList objects for sender and receiver
-                sender_friend_list, _ = FriendList.objects.get_or_create(user=friend_request.sender)
-                receiver_friend_list, _ = FriendList.objects.get_or_create(user=friend_request.receiver)
+                sender_friend_list, _ = FriendList.objects.get_or_create(
+                    user=friend_request.sender,
+                )
+                receiver_friend_list, _ = FriendList.objects.get_or_create(
+                    user=friend_request.receiver,
+                )
 
                 # Add each other as friends
                 sender_friend_list.add_friend(friend_request.receiver)
                 receiver_friend_list.add_friend(friend_request.sender)
-                response = "Accepted"
+                response = 'Accepted'
 
             elif action == RequestAction.REJECT.value:
                 friend_request.status = 'rejected'
-                response = "Rejected"
+                response = 'Rejected'
             else:
                 return Response({'error': 'Invalid action.'}, status=status.HTTP_400_BAD_REQUEST)
 
             friend_request.save()
-            return Response(f"{response} Friend Request", status=status.HTTP_200_OK)
+            return Response(f'{response} Friend Request', status=status.HTTP_200_OK)
 
         except Exception as err:
-            raise SocialMediaAppException(message=f'Some error occurred: {err}')
+            raise SocialMediaAppException(
+                message=f'Some error occurred: {err}',
+            )
 
 
 class FriendsListView(generics.ListAPIView):
@@ -122,7 +131,9 @@ class FriendsListView(generics.ListAPIView):
             friend_list = FriendList.objects.get(user=user)
             return friend_list.friends.all()
         except Exception as err:
-            raise SocialMediaAppException(message=f'Some error occurred: {err}')
+            raise SocialMediaAppException(
+                message=f'Some error occurred: {err}',
+            )
 
 
 class PendingFriendRequestsView(generics.ListAPIView):
@@ -131,7 +142,6 @@ class PendingFriendRequestsView(generics.ListAPIView):
     """
     serializer_class = FriendRequestSerializer
     pagination_class = CustomPageNumberPagination
-
 
     @validate_registered_user_uuid
     def dispatch(self, *args, **kwargs):
@@ -157,8 +167,8 @@ class PendingFriendRequestsView(generics.ListAPIView):
             sender_user = User.objects.get(id=sender)
             filtered_result = {
 
-                    'name': sender_user.name,
-                    'email': sender_user.email
+                'name': sender_user.name,
+                'email': sender_user.email,
 
             }
             filtered_results.append(filtered_result)
@@ -167,4 +177,3 @@ class PendingFriendRequestsView(generics.ListAPIView):
         data['results'] = filtered_results
 
         return Response(data)
-

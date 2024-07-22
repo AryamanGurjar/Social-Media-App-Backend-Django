@@ -1,25 +1,25 @@
+from __future__ import annotations
+
 from rest_framework import serializers
-from user_auth.models import User
-
-from social_media_app.utils import encode_text, decode_text
-
-from user_auth.constants import EMPTY_PASSWORD, USER_ALREADY_EXIST
-
-from social_media_app.custom_exception import InvalidValue
 
 from search_user.constants import EMAIL_IDENTIFIER
-
-from user_auth.constants import NO_PROPER_VALUE, INVALID_PASSWORD, INVALID_EMAIL, ENCRYPTED_PASSWORD
-
-
+from social_media_app.custom_exception import InvalidValue
+from social_media_app.utils import decode_text
+from social_media_app.utils import encode_text
+from user_auth.constants import EMPTY_PASSWORD
+from user_auth.constants import ENCRYPTED_PASSWORD
+from user_auth.constants import INVALID_EMAIL
+from user_auth.constants import INVALID_PASSWORD
+from user_auth.constants import NO_PROPER_VALUE
+from user_auth.constants import USER_ALREADY_EXIST
+from user_auth.models import User
 
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id','name', 'email', 'password']
+        fields = ['id', 'name', 'email', 'password']
         extra_kwargs = {'password': {'write_only': True}}
-
 
     def create(self, validated_data):
         password = validated_data.pop('password')
@@ -56,8 +56,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         return representation
 
 
-
-
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
@@ -81,7 +79,7 @@ class LoginSerializer(serializers.Serializer):
                 raise serializers.ValidationError(INVALID_PASSWORD)
 
         else:
-            raise InvalidValue(message= NO_PROPER_VALUE)
+            raise InvalidValue(message=NO_PROPER_VALUE)
 
         data['user'] = user
         return data

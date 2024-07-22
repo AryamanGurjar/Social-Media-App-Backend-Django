@@ -1,14 +1,12 @@
-from rest_framework import generics
+from __future__ import annotations
 
-from user_auth.models import User
+from rest_framework import generics
 
 from .constants import EMAIL_IDENTIFIER
 from .serializers import UserSerializer
-
-
-from social_media_app.utils import CustomPageNumberPagination
-
 from social_media_app.custome_decorator import validate_registered_user_uuid
+from social_media_app.utils import CustomPageNumberPagination
+from user_auth.models import User
 
 
 class UserSearchView(generics.ListAPIView):

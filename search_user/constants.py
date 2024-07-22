@@ -1,1 +1,2 @@
-EMAIL_IDENTIFIER= '@'
+from __future__ import annotations
+EMAIL_IDENTIFIER = '@'

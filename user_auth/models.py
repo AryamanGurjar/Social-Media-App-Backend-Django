@@ -1,5 +1,9 @@
-from django.db import models
+from __future__ import annotations
+
 from uuid import uuid4
+
+from django.db import models
+
 
 class User(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)

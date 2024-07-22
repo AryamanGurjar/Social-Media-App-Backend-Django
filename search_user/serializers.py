@@ -1,5 +1,9 @@
+from __future__ import annotations
+
 from rest_framework import serializers
+
 from user_auth.models import User
+
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -17,5 +21,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['name','email']  # No default fields
-
+        fields = ['name', 'email']  # No default fields

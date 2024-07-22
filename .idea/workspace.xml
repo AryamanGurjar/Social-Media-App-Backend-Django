@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a43c0be-eed4-4c0e-a920-cfbe2fe6c530" name="Changes" comment="" />
+    <list default="true" id="5a43c0be-eed4-4c0e-a920-cfbe2fe6c530" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/social_media_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/social_media_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MakeFile" beforeDir="false" afterPath="$PROJECT_DIR$/MakeFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dosetup.bat" beforeDir="false" afterPath="$PROJECT_DIR$/dosetup.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/migrations/0002_alter_friendrequest_options.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/migrations/0002_alter_friendrequest_options.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friend_logic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/friend_logic/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search_user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/search_user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/custom_exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/custom_exception.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/custome_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/custome_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media_app/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/social_media_app/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/migrations/0002_user_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/migrations/0002_user_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/migrations/0003_alter_user_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/migrations/0003_alter_user_name.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jatviimaHkh0VAGFJWrKG10kAp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -18,6 +69,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "D:/accuknox_social_media_app/social_media_app"
   }
 }]]></component>
