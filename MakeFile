@@ -1,0 +1,10 @@
+dosetup:
+    if not exist data_social_media_app mkdir data_social_media_app
+    docker pull postgres
+    docker run -d -p 5433:5432 --name social_media_app_postgres -e POSTGRES_PASSWORD=2024 -v data_social_media_app:/var/lib/postgresql/data postgres
+    timeout /t 10
+    docker exec -it social_media_app_postgres psql -U postgres -c "CREATE DATABASE social_media;"
+    pip install -r requirements.txt
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver 80

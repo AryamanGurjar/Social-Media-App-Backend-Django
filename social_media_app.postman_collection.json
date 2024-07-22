@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "9bd45ba9-0a3b-486a-89ad-c499e60a959d",
+		"name": "social_media_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19724356"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"user6\",\r\n    \"email\": \"user6@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user3@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User with Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/cf26aca7-042f-4d88-a38a-5e8b8f60caf9/search_user/search/?keyword=use&page=1&page_size=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"cf26aca7-042f-4d88-a38a-5e8b8f60caf9",
+						"search_user",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "use"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User with email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/cf26aca7-042f-4d88-a38a-5e8b8f60caf9/search_user/search/?keyword=aryamangurjar6@gmail.com&page=1&page_size=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"cf26aca7-042f-4d88-a38a-5e8b8f60caf9",
+						"search_user",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "aryamangurjar6@gmail.com"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"receiver_email_id\":\"user6@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/a120deef-6b32-427b-9b9b-f92b4362a985/friend/send_friend_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"a120deef-6b32-427b-9b9b-f92b4362a985",
+						"friend",
+						"send_friend_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept/Reject Friend Req",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender_email_id\":\"user5@gmail.com\",\r\n    \"action\":\"accept\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/2ecd742f-1073-4aa7-a781-cafb0daf8d9d/friend/request_action/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"2ecd742f-1073-4aa7-a781-cafb0daf8d9d",
+						"friend",
+						"request_action",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friend List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/cf26aca7-042f-4d88-a38a-5e8b8f60caf9/friend/user_accepted_friends/?page=1&page_size=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"cf26aca7-042f-4d88-a38a-5e8b8f60caf9",
+						"friend",
+						"user_accepted_friends",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending Friend Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/a120deef-6b32-427b-9b9b-f92b4362a985/friend/user_pending_friends/?page=1&page_size=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"a120deef-6b32-427b-9b9b-f92b4362a985",
+						"friend",
+						"user_pending_friends",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
